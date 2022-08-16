@@ -1,7 +1,5 @@
 """Define PyPI package."""
 
-import flake8_postponed_annotations
-
 import setuptools
 
 
@@ -22,36 +20,8 @@ setuptools.setup(
 	package_data={'flake8_postponed_annotations': ['py.typed']},
 
 	install_requires=[
-		'flake8>=3.8.0,<6.0',
-		'importlib_metadata>=4.0.0,<5.0.0;python_version<"3.8.0"',
-		'typing_extensions>=3.7.4.2',
+		'flake8-modern-annotations',
 	],
-	extras_require={
-		'dev': [
-			'mypy',
-			'flake8<5.0',
-			'flake8-annotations',
-			'flake8-bandit',
-			'flake8-bugbear',
-			'flake8-commas',
-			'flake8-comprehensions',
-			'flake8-continuation',
-			'flake8-datetimez',
-			'flake8-docstrings',
-			'flake8-import-order',
-			'flake8-literal',
-			'flake8-noqa',
-			'flake8-polyfill',
-			'flake8-postponed-annotations',
-			'flake8-requirements',
-			# 'flake8-smart-tabs',
-			'flake8-tabs',
-			'flake8-typechecking-import',
-			'flake8-use-fstring',
-			'pep8-naming',
-		],
-		'test': [],
-	},
 	classifiers=[
 		'Framework :: Flake8',
 		'Environment :: Console',
@@ -67,9 +37,4 @@ setuptools.setup(
 		'Topic :: Software Development :: Quality Assurance',
 	],
 	python_requires='>=3.7',
-	entry_points={
-		'flake8.extension': [
-			f'{flake8_postponed_annotations.plugin_prefix} = flake8_postponed_annotations.checker:AnnotationChecker',
-		],
-	},
 )
